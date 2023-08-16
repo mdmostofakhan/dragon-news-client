@@ -4,6 +4,7 @@ import Footer from '../pages/sharet/fooder/Footer';
 import { Col, Container, Row } from 'react-bootstrap';
 import LeftNav from '../pages/sharet/leftNav/LeftNav';
 import RightNav from '../pages/sharet/rightNav/RightNav';
+import { Outlet } from 'react-router-dom';
 
 
 const Main = () => {
@@ -19,7 +20,8 @@ const Main = () => {
                     </Col>
 
                     <Col lg={6}>
-                    <h2>Main Content Coming</h2>
+                        <Outlet></Outlet>
+                    
                     </Col>
                    
                     <Col lg={3}>
