@@ -10,7 +10,7 @@ import { Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 
 const Header = () => {
     return (
-        <Container>
+        <Container className='mt-4'>
              
        <div className='text-center mt-5 '>
             <img src={logo} alt="" />
