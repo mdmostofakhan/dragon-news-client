@@ -5,7 +5,13 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../Authproviders/AuthProvider';
 
 const NavigationBar = () => {
-    const {user} = useContext(AuthContext)
+    const {user, logOut} = useContext(AuthContext)
+
+    const handleOut = () =>{
+       logOut()
+       .then()
+       .catch(error => console.log(error))
+    }
     return (
         <Container>
                <Navbar expand="lg" bg="light" className="light mb-4">
@@ -21,11 +27,12 @@ const NavigationBar = () => {
                 <Nav.Link href="#link">career</Nav.Link>
               </Nav>
               <Nav>
-                  { user && <FaUserCircle style={{fontSize: '2rem'}}></FaUserCircle>
-                 }
+                  { user && <FaUserCircle style={{fontSize: '2rem'}}>
+                  </FaUserCircle>
+                   }
                 
                   { user ? 
-                  <Button variant="secondary">Logout </Button> :
+                  <Button onClick={handleOut} variant="secondary">Logout </Button> :
                    <Link to="/login">
                         <Button variant="secondary">Login </Button>
                    </Link>
